@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Ventas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Reporte de Ventas</h1>
+
+{% if ventas %}
+<table>
+    <tr>
+        <th>ID Producto</th>
+        <th>Nombre Producto</th>
+        <th>Cantidad Vendida</th>
+        <th>Fecha</th>
+        <th>Precio</th>
+        <th>Total</th>
+    </tr>
+    {% for venta in ventas %}
+    <tr>
+        <td>{{ venta['ID'] }}</td>
+        <td>{{ venta['Nombre'] }}</td>
+        <td>{{ venta['Cantidad Vendida'] }}</td>  <!-- Muestra la cantidad vendida -->
+        <td>{{ venta['Fecha'] }}</td>
+        <td>{{ venta['Precio'] }}</td>
+        <td>{{ venta['Cantidad Vendida'] | float * venta['Precio'] | float }}</td>  <!-- Calcula el total -->
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No hay ventas registradas.</p>
+{% endif %}
+
+</body>
+</html>

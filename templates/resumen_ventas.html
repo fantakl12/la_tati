@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Ventas</title>
+</head>
+<body>
+    <h1>Reporte de Ventas</h1>
+    <table>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Fecha</th>
+        </tr>
+        {% for venta in ventas %}
+        <tr>
+            <td>{{ venta['producto'] }}</td>
+            <td>{{ venta['cantidad'] }}</td>
+            <td>{{ venta['precio'] }}</td>
+            <td>{{ venta['fecha'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

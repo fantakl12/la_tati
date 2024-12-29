@@ -1,0 +1,115 @@
+/* static/css/estilo.css */
+
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E1F5FE; /* Azul claro */
+    color: #0D47A1; /* Azul oscuro para el texto */
+    margin: 0;
+}
+
+/* Estilo del encabezado */
+header {
+    background: #0D47A1; /* Azul oscuro */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5em; /* Título más grande */
+}
+
+/* Estilo de la navegación */
+nav {
+    width: 250px; /* Ancho de la barra de navegación */
+    background: #1976D2; /* Azul medio */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    position: fixed; /* Fijo a la izquierda */
+    height: 100%; /* Altura completa */
+}
+
+nav h3 {
+    margin-top: 0;
+    color: #fff; /* Color blanco para el encabezado */
+}
+
+/* Estilo de los enlaces de navegación */
+nav a {
+    display: block;
+    margin: 10px 0;
+    color: #fff; /* Color blanco */
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background: #42A5F5; /* Azul brillante */
+    transition: background 0.3s; /* Transición suave */
+}
+
+nav a:hover {
+    background: #2196F3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilo del contenedor principal */
+.container {
+    margin-left: 270px; /* Espacio para la barra de navegación */
+    padding: 20px;
+    background: #ffffff; /* Fondo blanco para el contenido */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo del encabezado del contenedor */
+.container h2 {
+    text-align: center;
+    color: #0D47A1; /* Color azul oscuro */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilo de los mensajes */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.flash.success {
+    background: #d4edda; /* Verde claro para éxito */
+    color: #155724; /* Texto verde oscuro */
+    border: 1px solid #c3e6cb; /* Borde verde */
+    border-radius: 5px;
+}
+
+.flash.error {
+    background: #f8d7da; /* Rojo claro para error */
+    color: #721c24; /* Texto rojo oscuro */
+    border: 1px solid #f5c6cb; /* Borde rojo */
+    border-radius: 5px;
+}
+
+/* Estilo del botón de Cerrar Sesión */
+form input[type="submit"] {
+    background: #f44336; /* Rojo para el botón de cerrar sesión */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Espaciado */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em; /* Tamaño de fuente */
+    transition: background 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background: #c62828; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav {
+        width: 100%; /* Navegación en pantalla completa en dispositivos pequeños */
+        height: auto; /* Altura automática */
+        position: relative; /* Cambiar a posición relativa */
+    }
+
+    .container {
+        margin-left: 0; /* Sin margen izquierdo en dispositivos pequeños */
+    }
+}

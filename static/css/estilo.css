@@ -1,0 +1,195 @@
+/* static/css/estilo.css */
+
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa; /* Color azul claro de fondo */
+    color: #004d40; /* Color de texto oscuro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background: #00796b; /* Color verde mar */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* Navegación */
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #b2ebf2; /* Color azul claro al pasar el mouse */
+}
+
+/* Contenido principal */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Barra de búsqueda */
+.search-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input[type="text"] {
+    width: 300px; /* Ancho de la barra de búsqueda */
+    padding: 10px;
+    border: 1px solid #00796b; /* Borde verde mar */
+    border-radius: 5px; /* Esquinas redondeadas */
+    margin-right: 10px; /* Espacio entre el input y el botón */
+}
+
+.search-container button {
+    background: #00796b; /* Color verde mar */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold; /* Texto en negrita */
+    transition: background 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.search-container button:hover {
+    background: #004d40; /* Color verde más oscuro al pasar el mouse */
+}
+
+/* Formularios */
+form {
+    margin: 20px 0;
+    padding: 20px;
+    background: #ffffff; /* Fondo blanco para formularios */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #00796b; /* Borde verde mar */
+    border-radius: 5px;
+}
+
+input[type="submit"], .btn-primary {
+    background: #00796b; /* Color verde mar */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block; /* Para que funcione con el estilo de los botones */
+    font-weight: bold; /* Hacer el texto más destacado */
+    transition: background 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+input[type="submit"]:hover, .btn-primary:hover {
+    background: #004d40; /* Color verde más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón de agregar producto */
+.btn-agregar-producto {
+    background: #00796b; /* Color verde mar */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block; /* Para que funcione con el estilo de los botones */
+    font-weight: bold; /* Hacer el texto más destacado */
+    transition: background 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.btn-agregar-producto:hover {
+    background: #004d40; /* Color verde más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón de agregar cliente */
+.btn-agregar-cliente {
+    background-color: #00796b; /* Color verde mar */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px 15px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    display: inline-block; /* Para que funcione el tamaño */
+    transition: background 0.3s; /* Suave transición de fondo */
+}
+
+.btn-agregar-cliente:hover {
+    background-color: #004d40; /* Color verde más oscuro al pasar el mouse */
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background-color: #6c757d; /* Color gris */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Color gris oscuro al pasar el mouse */
+}
+
+/* Mensajes */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.flash.success {
+    background: #e0f7fa; /* Color azul claro para mensajes de éxito */
+    color: #004d40; /* Color de texto oscuro */
+}
+
+.flash.error {
+    background: #ffccbc; /* Color coral claro para mensajes de error */
+    color: #c62828; /* Color rojo oscuro para texto */
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #00796b; /* Borde verde mar */
+}
+
+th {
+    background: #00796b; /* Color verde mar */
+    color: #ffffff;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    background: #ffffff; /* Fondo blanco para celdas */
+}
+
+tr:nth-child(even) {
+    background: #e0f7fa; /* Color azul claro para filas pares */
+}

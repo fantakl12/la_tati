@@ -1,0 +1,6 @@
+ID,Nombre,Email,Password,Rol
+1,Admin,chuzo1305@gmail.com,TEmeo1234,admin
+3,User,pan@gmail.com,clave1234,usuario
+5,User,eduardobarreravc@gmail.com,TEmeo1234,usuario
+6,User,pipe@gmail.com,TEmeo1234,usuario
+7,User,camila@gmail.com,1234567,usuario

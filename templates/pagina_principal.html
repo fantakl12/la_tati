@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a La Tati POS</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Inventario</a>
+            <a href="{{ url_for('vender_producto') }}">Ventas</a>
+            <a href="{{ url_for('ver_clientes') }}">Clientes</a>
+            <a href="{{ url_for('ver_proveedores') }}">Proveedores</a>
+            <a href="{{ url_for('reporte_ventas') }}" class="btn btn-report">Reporte de Ventas</a>
+            <form action="{{ url_for('cerrar_sesion') }}" method="POST" style="display: inline;">
+                <input type="submit" value="Cerrar Sesión">
+            </form>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Panel de Control</h2>
+        <p>Selecciona una opción del menú para comenzar.</p>
+        
+        <h2>Alertas de Stock Bajo</h2>
+        {% if alertas %}
+            <ul>
+                {% for alerta in alertas %}
+                    <li>{{ alerta['Nombre'] }}: Quedan solo {{ alerta['Cantidad'] }} unidades (Umbral: {{ alerta['Umbral'] }})</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay alertas de stock bajo.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

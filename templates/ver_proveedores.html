@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+    <title>Ver Proveedores</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Fondo claro */
+            margin: 0;
+            padding: 20px;
+            color: #004d40; /* Texto oscuro */
+        }
+
+        header {
+            background: #00796b; /* Verde océano */
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #00796b; /* Verde océano */
+        }
+
+        .flash.success {
+            background: #b2ebf2; /* Azul claro */
+            color: #004d40;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #4db6ac;
+            border-radius: 5px;
+        }
+
+        .proveedor-item {
+            border-bottom: 1px solid #b2dfdb;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .proveedor-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn-primary, .btn-secondary, .btn-danger {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #009688; /* Verde océano */
+        }
+
+        .btn-secondary {
+            background-color: #00796b; /* Verde oscuro */
+        }
+
+        .btn-danger {
+            background-color: #e57373; /* Rojo suave */
+        }
+
+        .btn-primary:hover {
+            background-color: #00796b;
+        }
+
+        .btn-secondary:hover {
+            background-color: #004d40;
+        }
+
+        .btn-danger:hover {
+            background-color: #c62828;
+        }
+
+        @media (max-width: 600px) {
+            .proveedor-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .proveedor-item a {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lista de Proveedores</h1>
+    </header>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash success">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <a href="{{ url_for('agregar_proveedor') }}" class="btn-primary">Agregar Proveedor</a>
+        
+        <h2>Proveedores</h2>
+        {% if proveedores %}
+            {% for proveedor in proveedores %}
+                <div class="proveedor-item">
+                    <div>
+                        <p><strong>Nombre:</strong> {{ proveedor.Nombre }}</p>
+                        <p><strong>Contacto:</strong> {{ proveedor.Contacto }}</p>
+                    </div>
+                    <div>
+                        <a href="{{ url_for('editar_proveedor', id=proveedor.ID) }}" class="btn-secondary">Editar</a>
+                        <a href="{{ url_for('eliminar_proveedor', id=proveedor.ID) }}" class="btn-danger">Eliminar</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay proveedores registrados.</p>
+        {% endif %}
+        
+        <a href="{{ url_for('pagina_principal') }}" class="btn-secondary">Volver al Menú Principal</a>
+    </div>
+</body>
+</html>

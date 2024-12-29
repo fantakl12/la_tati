@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/estilo.css">
+    <title>Agregar Proveedor</title>
+</head>
+<body>
+    <header>
+        <h1>Agregar Proveedor</h1>
+    </header>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash success">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <input type="text" name="nombre" placeholder="Nombre del Proveedor" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="telefono" placeholder="Teléfono" required>
+            <input type="submit" class="btn-primary" value="Agregar Proveedor">
+        </form>
+        <a href="{{ url_for('ver_proveedores') }}" class="btn-secondary">Volver al Menú Principal</a>
+    </div>
+</body>
+</html>

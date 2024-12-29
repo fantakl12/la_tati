@@ -1,0 +1,17 @@
+ID,Nombre,Cantidad Vendida,Fecha,Precio
+
+1,Coca-Cola 2L Retornable,2,2024-12-28 03:01:41,1700.0
+2,Coca-Cola 2L Retornable,2,2024-12-28 03:01:41,1700.0
+3,Coca-Cola 3L Retornable,2,2024-12-28 03:01:41,2300.0
+1,Coca-Cola 1L Retornable,1,2024-12-28 03:02:19,1100.0
+2,Coca-Cola 2L Retornable,1,2024-12-28 03:02:19,1700.0
+3,Coca-Cola 3L Retornable,1,2024-12-28 03:02:19,2300.0
+1,Coca-Cola 1L Retornable,1,2024-12-28 03:03:09,1100.0
+5,Fanta 3L Retornable,1,2024-12-28 03:03:09,2300.0
+1,Coca-Cola 1L Retornable,3,2024-12-29 19:11:35,1100.0
+2,Coca-Cola 2L Retornable,4,2024-12-29 19:11:35,1700.0
+3,Coca-Cola 3L Retornable,4,2024-12-29 19:11:35,2300.0
+4,Fanta 1L Retornable,2,2024-12-29 19:11:35,1100.0
+5,Fanta 3L Retornable,1,2024-12-29 19:11:35,2300.0
+6,Fanta 2L Retornable,2,2024-12-29 19:11:35,1700.0
+7,Te Supremo 40g,2,2024-12-29 19:11:35,700.0

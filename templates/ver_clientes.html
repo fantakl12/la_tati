@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Clientes</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <!-- Botón para agregar cliente con la clase de estilo -->
+            <a href="{{ url_for('agregar_cliente') }}" class="btn-agregar-cliente">Agregar Cliente</a>
+        </nav>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente.ID }}</td>
+                    <td>{{ cliente.Nombre }}</td>
+                    <td>{{ cliente.Email }}</td>
+                    <td>{{ cliente.Telefono }}</td>
+                    <td>
+                        <a href="{{ url_for('editar_cliente', id=cliente.ID) }}">Editar</a>
+                        <a href="{{ url_for('eliminar_cliente', id=cliente.ID) }}">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Botón para regresar al menú principal -->
+        <a href="{{ url_for('pagina_principal') }}" class="btn-secondary">Volver al Menú Principal</a>
+    </div>
+</body>
+</html>

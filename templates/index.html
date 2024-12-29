@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/estilo.css">
+    <title>Inventario</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Fondo claro */
+            margin: 0;
+            padding: 20px;
+            color: #004d40; /* Texto oscuro */
+        }
+
+        header {
+            background: #00796b; /* Verde océano */
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #00796b; /* Verde océano */
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #b2dfdb; /* Línea de separación */
+        }
+
+        th {
+            background-color: #009688; /* Encabezados en verde océano */
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #b2ebf2; /* Fondo claro al pasar el mouse */
+        }
+
+        .btn-agregar-producto, .btn-secondary {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        .btn-agregar-producto {
+            background-color: #009688; /* Verde océano */
+        }
+
+        .btn-secondary {
+            background-color: #00796b; /* Verde oscuro */
+        }
+
+        .btn-agregar-producto:hover {
+            background-color: #00796b;
+        }
+
+        .btn-secondary:hover {
+            background-color: #004d40;
+        }
+
+        @media (max-width: 600px) {
+            th, td {
+                font-size: 14px; /* Tamaño de fuente más pequeño en pantallas móviles */
+            }
+
+            .container {
+                padding: 15px; /* Menos padding en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Inventario</h1>
+    </header>
+    <div class="container">
+        <h2>Lista de Productos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in inventario %}
+                <tr>
+                    <td>{{ producto.ID }}</td>
+                    <td>{{ producto.Nombre }}</td>
+                    <td>{{ producto.Categoria }}</td>
+                    <td>{{ producto.Cantidad }}</td>
+                    <td>{{ producto.Precio }}</td>
+                    <td>
+                        <a href="{{ url_for('editar_producto', id=producto.ID) }}" class="btn-secondary">Editar</a>
+                        <a href="{{ url_for('eliminar_producto', id=producto.ID) }}" class="btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <!-- Botón para agregar un producto -->
+        <a href="{{ url_for('agregar_producto') }}" class="btn-agregar-producto">Agregar Producto</a>
+
+        <!-- Botón para regresar al menú principal -->
+        <a href="{{ url_for('pagina_principal') }}" class="btn-secondary">Volver al Menú Principal</a>
+    </div>
+</body>
+</html>

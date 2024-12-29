@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Proveedor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Editar Proveedor</h1>
+    </header>
+    <div class="container">
+        <form method="POST">
+            <input type="text" name="nombre" value="{{ proveedor.Nombre }}" required>
+            <input type="email" name="email" value="{{ proveedor.Email }}" required>
+            <input type="text" name="telefono" value="{{ proveedor.Telefono }}" required>
+            <input type="submit" value="Actualizar Proveedor">
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+    <title>Vender Producto</title>
+</head>
+<body>
+    <header>
+        <h1>Vender Producto</h1>
+    </header>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash success">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <!-- Barra de búsqueda -->
+        <div class="search-container">
+            <form action="{{ url_for('buscar_producto') }}" method="GET">
+                <input type="text" name="query" placeholder="Buscar producto..." required>
+                <button type="submit" class="btn-primary">Buscar</button>
+            </form>
+        </div>
+
+        <form method="POST">
+            <h2>Seleccionar Productos para Vender</h2>
+            {% for producto in inventario %}
+                <div class="producto-item">
+                    <input type="checkbox" name="productos" value="{{ producto['ID'] }}" id="producto-{{ producto['ID'] }}">
+                    <label for="producto-{{ producto['ID'] }}">
+                        {{ producto['Nombre'] }} - Cantidad disponible: {{ producto['Cantidad'] }}
+                    </label>
+                    <input type="number" name="cantidades" id="cantidad-{{ producto['ID'] }}" placeholder="Cantidad a vender" min="1" value="1">
+                </div>
+            {% endfor %}
+            <input type="submit" class="btn-primary" value="Vender Productos">
+        </form>
+        <a href="{{ url_for('pagina_principal') }}" class="btn-secondary">Volver al Menú Principal</a>
+    </div>
+</body>
+</html>
